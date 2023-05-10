@@ -1,6 +1,16 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import "@styles/globals.css";
+import type {AppProps} from "next/app";
+import Head from "next/head";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+export const siteTitle = "Jaydeem";
+
+export default function App({Component, pageProps}: AppProps) {
+	return (
+		<>
+			<Head>
+				<title>{siteTitle}</title>
+			</Head>
+			<Component {...pageProps} />
+		</>
+	);
 }
