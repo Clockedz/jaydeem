@@ -5,30 +5,32 @@ const SplashScreen = ({finishLoading}) => {
 	const [isMounted, setIsMounted] = React.useState(false);
 
 	const animate = () => {
-		const rect = document.querySelector("#rectangle");
+    const rect = document.querySelector("#rectangle");
 
-		const loader = anime.timeline({
-			complete: () => {
-				finishLoading();
-			},
-		});
+    const loader = anime.timeline({
+      complete: () => {
+        finishLoading();
+      },
+    });
 
-		loader
-			.add({
-				targets: rect,
-				y: ["100%", "0%"],
-				height: ["0%", "100%"],
-				duration: 1500,
-				easing: "easeInOutExpo",
-			})
-			.add({
-				targets: rect,
-				y: ["0%", "100%"],
-				height: ["100%", "0%"],
-				duration: 1000,
-				easing: "easeInOutExpo",
-			});
-	};
+    loader
+      .add({
+        targets: rect,
+        y: ["100%", "0%"],
+        height: ["0%", "100%"],
+        duration: 1500,
+        easing: "easeInOutExpo",
+      })
+      .add({
+        targets: rect,
+        y: ["0%", "100%"],
+        height: ["100%", "0%"],
+        opacity: [1, 0],
+        duration: 1000,
+        easing: "easeInOutExpo",
+      });
+  };
+	  
 
 	React.useEffect(() => {
 		const timeout = setTimeout(() => setIsMounted(true), 10);
