@@ -3,28 +3,29 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 export default function Integra() {
-  const { ref, inView } = useInView({ threshold: 1, triggerOnce: true });
+  const {ref, inView} = useInView({threshold: 1, triggerOnce: true});
   const containerVariants = {
-    hidden: {
-      height: "100%",
-      opacity: 0,
-    },
-    visible: {
-      height: "0%",
-      opacity: 1,
-      transition: {
-        duration: 1,
-        ease: "easeInOut",
-      },
-    },
-    showImg: {
-      opacity: 1,
-      transition: {
-        duration: 1,
-        ease: "easeInOut",
-      },
-    },
+		hidden: {
+			height: 0,
+			opacity: 0,
+		},
+		visible: {
+			height: "100%",
+			opacity: 1,
+			transition: {
+				duration: 1,
+				ease: "easeInOut",
+			},
+		},
+		showImg: {
+			opacity: 1,
+			transition: {
+				duration: 1,
+				ease: "easeInOut",
+			},
+		},
   };
+
 
   return (
     <div className="lg:w-1/2 w-screen h-1/2 relative bg-black flex justify-center items-center">

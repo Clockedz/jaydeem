@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 export default function Integra() {
-  const { ref, inView } = useInView({ threshold: 1, triggerOnce: true });
+  const {ref, inView} = useInView({threshold: 1, triggerOnce: true});
   const containerVariants = {
     hidden: {
       height: 0,
