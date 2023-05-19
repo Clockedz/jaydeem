@@ -1,9 +1,11 @@
 import React from "react";
+import Mobile from "./nav/mobile";
+import Desktop from "./nav/desktop";
 
 export default function Navbar() {
-	return (
-		<nav className="flex items-center justify-center fixed text-xl z-10 font-text">
-			Home
-		</nav>
-	);
+	const isMobile =
+		/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ||
+		window.innerWidth <= 768;
+
+	return isMobile ? <Mobile /> : <Desktop />;
 }
