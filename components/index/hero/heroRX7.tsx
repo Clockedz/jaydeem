@@ -27,28 +27,28 @@ export default function Integra() {
   };
 
   return (
-    <div className="lg:w-1/2 w-screen h-1/2 relative bg-black flex justify-center items-center">
-      <motion.div
-        className="w-full h-full absolute top-0 left-0 bg-jdmgray"
-        ref={ref}
-        initial="hidden"
-        animate={inView ? ["visible", "showImg"] : "hidden"}
-        variants={containerVariants}
-      />
-      <motion.img
-        src="/images/rx7.jpg"
-        style={{ position: "relative", opacity: 0 }}
-        animate={{ opacity: inView ? 1 : 0 }}
-        transition={{ duration: 1, ease: "easeInOut", delay: 1 }}
-      />
-      <motion.p
-        style={{ opacity: 0 }}
-        animate={{ opacity: inView ? 1 : 0 }}
-        transition={{ duration: 0.35, ease: "easeInOut", delay: 0.35 }}
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl lg:text-3xl font-bold text-center z-10"
-      >
-        Mazda: Le Miat
-      </motion.p>
-    </div>
+		<div className="lg:w-1/2 w-screen h-1/2 relative bg-black flex justify-center items-center">
+			<motion.div
+				className="w-full h-full absolute top-0 left-0 bg-jdmgray"
+				ref={ref}
+				initial="hidden"
+				animate={inView ? ["visible", "showImg"] : "hidden"}
+				variants={containerVariants}
+			/>
+			<motion.img
+				src="/images/rx7.jpg"
+				style={{position: "relative", opacity: 0}}
+				animate={{opacity: inView ? 1 : 0}}
+				transition={{duration: 1, ease: "easeInOut", delay: 1}}
+			/>
+			<motion.p
+				style={{opacity: 0}}
+				animate={{opacity: inView ? 1 : 0}}
+				transition={{duration: 0.35, ease: "easeInOut", delay: 0.35}}
+				className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl lg:text-3xl font-bold text-center z-10"
+			>
+				Mazda's Rotary Excellence
+			</motion.p>
+		</div>
   );
 }

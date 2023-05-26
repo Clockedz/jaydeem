@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
+import anime from "animejs";
 
 export const triangle = (
 	<svg
@@ -12,17 +13,30 @@ export const triangle = (
 	</svg>
 );
 
-export const filledCircle = (
-	<svg
-		width="32"
-		height="32"
-		viewBox="0 0 32 32"
-		fill="none"
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<circle cx="16" cy="16" r="16" fill="white" />
-	</svg>
-);
+export const filledCircle = () => {
+	const circleRef = useRef([]);
+
+	useEffect(() => {
+		anime({
+			targets: circleRef.current,
+			r: 16,
+			duration: 1000,
+			easing: "easeOutExpo",
+		});
+	}, []);
+
+	return (
+		<svg
+			width="32"
+			height="32"
+			viewBox="0 0 32 32"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<circle ref={circleRef} cx="16" cy="16" r="3" fill="white" />
+		</svg>
+	);
+};
 
 export const circle = (
 	<svg
