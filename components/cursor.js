@@ -19,6 +19,7 @@ export default function Cursor() {
 			className="fixed top-0 left-0 w-4 h-4 bg-white rounded-full cursor-none pointer-events-none z-50"
 			style={{
 				transform: `translate(${cursorPos.x}px, ${cursorPos.y}px)`,
+				cursor: "none",
 			}}
 		/>
 	);
